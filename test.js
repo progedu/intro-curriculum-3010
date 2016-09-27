@@ -1,7 +1,11 @@
 (function () {
 	'use strict';
-	const todo = require('./index.js');
+	// const todo = require('./index.js');
 	const assert = require('assert');
+	const fs = require('fs');
+	
+	fs.unlink('./tasks.json',(err) => {	// 今ある './tasks.json' ファイルを消します。
+	const todo = require('./index.js');	// 先に読み込むとうまくいかなかったので移動しました。
 	
 	// todo と list のテスト
 	todo.todo('ノートを買う');
@@ -20,4 +24,5 @@
 	assert.deepEqual(todo.donelist(), []);
 
 	console.log('テストが正常に完了しました');
+	});
 })();
