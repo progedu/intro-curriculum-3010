@@ -2,6 +2,10 @@
 const todo = require('./index.js');
 const assert = require('assert');
 
+// テストの前に永続化されているファイルを消す
+const fs = require('fs');
+fs.unlink('./tasks.json', (err) => {
+    
 // todo と list のテスト
 todo.todo('ノートを買う');
 todo.todo('鉛筆を買う');
@@ -19,3 +23,5 @@ assert.deepEqual(todo.list(), []);
 assert.deepEqual(todo.donelist(), []);
 
 console.log('テストが正常に完了しました');
+
+});
