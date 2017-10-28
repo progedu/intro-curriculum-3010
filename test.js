@@ -2,6 +2,14 @@
 const todo = require('./index.js');
 const assert = require('assert');
 
+
+// テストの前に永続化ファイルを消す
+// TODO:実用時にファイルを消されるのはたまったもんじゃないので、ファイル退避用コードを書く
+const fs = require('fs');
+fs.unlink("./tasks.json", (err) =>{
+    const todo = require('./index.js');
+})
+
 // todo と list のテスト
 todo.todo('ノートを買う');
 todo.todo('鉛筆を買う');
