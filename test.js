@@ -1,4 +1,14 @@
 'use strict';
+//残っているタスクを削除
+const fs = require('fs');
+fs.unlink('./tasks.json', (err) => {
+
+
+//unlink('fileのパス' , function(err){});
+//第二引数でなかった場合の処理を書く
+
+
+
 const todo = require('./index.js');
 const assert = require('assert');
 
@@ -19,3 +29,6 @@ assert.deepEqual(todo.list(), []);
 assert.deepEqual(todo.donelist(), []);
 
 console.log('テストが正常に完了しました');
+
+}
+);
