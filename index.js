@@ -11,7 +11,7 @@ try {
 	tasks = new Map(JSON.parse(data));
 } catch (ignore) {
 	console.log(fileName + 'から復元できませんでした');
-}
+}	
 
 /**
  * タスクをファイルに保存する
