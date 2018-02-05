@@ -1,3 +1,4 @@
+'use strict';
 
 const fs = require('fs');
 const filename = './tasks.json'
@@ -6,7 +7,6 @@ fs.unlink(filename, (err) => {
         console.log(filename + 'の削除に失敗しました')
         console.log(err);
     } else {
-        'use strict';
         const todo = require('./index.js');
         const assert = require('assert');
 
