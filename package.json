@@ -1,11 +1,23 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "node test.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "hubot-todo": "file:../hubot-todo"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moyasin2018/intro-curriculum-3010.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moyasin2018/intro-curriculum-3010/issues"
+  },
+  "homepage": "https://github.com/moyasin2018/intro-curriculum-3010#readme",
+  "description": ""
 }
