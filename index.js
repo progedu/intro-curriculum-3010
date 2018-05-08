@@ -3,6 +3,9 @@
 let tasks = new Map();
 
 const fs = require('fs');
+fs.unlink('./tasks.json', (err) => {
+
+});
 const fileName = './tasks.json';
 
 // 同期的にファイルから復元
