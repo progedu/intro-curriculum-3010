@@ -24,6 +24,6 @@ fs.unlink('./tasks.json', (err) => {
     assert.deepEqual(todo.donelist(), []);
 
     console.log('テストが正常に完了しました');
-})
+});
 
 
