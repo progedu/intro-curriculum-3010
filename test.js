@@ -1,6 +1,12 @@
 'use strict';
 const todo = require('./index.js');
 const assert = require('assert');
+const fs = require('fs');
+const tasksFileName = './tasks.json';
+
+if (fs.existsSync(tasksFileName)) {
+    fs.unlinkSync(tasksFileName);
+}
 
 // todo と list のテスト
 todo.todo('ノートを買う');

@@ -7,8 +7,10 @@ const fileName = './tasks.json';
 
 // 同期的にファイルから復元
 try {
-	const data = fs.readFileSync(fileName, 'utf8');
-	tasks = new Map(JSON.parse(data));
+	if (fs.existsSync(fileName)) {
+		const data = fs.readFileSync(fileName, 'utf8');
+		tasks = new Map(JSON.parse(data));
+	}
 } catch (ignore) {
 	console.log(fileName + 'から復元できませんでした');
 }
