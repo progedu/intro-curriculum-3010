@@ -2,6 +2,10 @@
 const todo = require('./index.js');
 const assert = require('assert');
 
+const fs = require('fs');
+fs.unlink('./tasks.json', (err) => {
+    const todo = require('./index.js');
+
 // todo と list のテスト
 todo.todo('ノートを買う');
 todo.todo('鉛筆を買う');
