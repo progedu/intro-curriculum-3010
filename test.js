@@ -1,9 +1,10 @@
 'use strict';
 const todo = require('./index.js');
-const assert = require('assert');
-const fs = requiew('fs');
+const fs = require('fs');
 fs.unlink('./tasks.json', (err) => {
-// todo と list のテスト
+
+    const assert = require('assert');
+    // todo と list のテスト
     todo.todo('ノートを買う');
     todo.todo('鉛筆を買う');
     assert.deepEqual(todo.list(), ['ノートを買う', '鉛筆を買う']);
@@ -22,4 +23,3 @@ fs.unlink('./tasks.json', (err) => {
     console.log('テストが正常に完了しました');
 
 });
-
