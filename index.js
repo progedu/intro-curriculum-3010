@@ -1,4 +1,7 @@
 'use strict';
+
+const fs = require('fs');
+fs.unlink('./tasks.json',(err)=>{
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
 let tasks = new Map();
 
@@ -94,3 +97,5 @@ module.exports = {
 	donelist: donelist,
 	del: del
 };
+
+});
