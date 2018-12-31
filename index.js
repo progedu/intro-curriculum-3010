@@ -1,4 +1,4 @@
-'use strict';z
+'use strict';
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
 let tasks = new Map();
 
