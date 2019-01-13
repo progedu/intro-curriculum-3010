@@ -1,7 +1,7 @@
 'use strict';
 const assert = require('assert');
 
-// tasks.jsonファイルの削除
+// テスト前にtasks.jsonファイルを削除
 const fs = require('fs');
 fs.unlink('./tasks.json', (err) => {
     const todo = require('./index.js');
