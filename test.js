@@ -2,6 +2,13 @@
 const todo = require('./index.js');
 const assert = require('assert');
 
+//テストの前に永続化されているファイルを消す
+const fa = require('fs');
+fs.unlink('./tasks.json', (err) => {
+    //テスト処理
+    const todo = require('./index.js')
+});
+
 // todo と list のテスト
 todo.todo('ノートを買う');
 todo.todo('鉛筆を買う');
