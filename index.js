@@ -1,7 +1,6 @@
 'use strict';
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
 let tasks = new Map();
-
 const fs = require('fs');
 const fileName = './tasks.json';
 
