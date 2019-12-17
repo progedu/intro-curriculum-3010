@@ -19,3 +19,4 @@ assert.deepEqual(todo.list(), []);
 assert.deepEqual(todo.donelist(), []);
 
 console.log('テストが正常に完了しました');
+
