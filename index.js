@@ -1,23 +1,23 @@
-'use strict';
+"use strict";
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
 let tasks = new Map();
 
-const fs = require('fs');
-const fileName = './tasks.json';
+const fs = require("fs");
+const fileName = "./tasks.json";
 
 // 同期的にファイルから復元
 try {
-	const data = fs.readFileSync(fileName, 'utf8');
+	const data = fs.readFileSync(fileName, "utf8");
 	tasks = new Map(JSON.parse(data));
 } catch (ignore) {
-	console.log(fileName + 'から復元できませんでした');
+	console.log(fileName + "から復元できませんでした");
 }
 
 /**
  * タスクをファイルに保存する
  */
 function saveTasks() {
-	fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8');
+	fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), "utf8");
 }
 
 /**
@@ -54,7 +54,7 @@ function isNotDone(taskAndIsDonePair) {
 function list() {
 	return Array.from(tasks)
 		.filter(isNotDone)
-		.map(t => t[0]);
+		.map((t) => t[0]);
 }
 
 /**
@@ -75,7 +75,7 @@ function done(task) {
 function donelist() {
 	return Array.from(tasks)
 		.filter(isDone)
-		.map(t => t[0]);
+		.map((t) => t[0]);
 }
 
 /**
@@ -92,5 +92,5 @@ module.exports = {
 	list: list,
 	done: done,
 	donelist: donelist,
-	del: del
+	del: del,
 };
