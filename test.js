@@ -1,4 +1,11 @@
 'use strict';
+
+//テスト前の永続化されたファイルを消す
+const fs = require('fs');
+fs.unlink('./tasks.json', (err) => {
+  // テスト処理
+});
+
 const todo = require('./index.js');
 const assert = require('assert');
 
