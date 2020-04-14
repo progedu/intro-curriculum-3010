@@ -11,8 +11,6 @@ try {
 	tasks = new Map(JSON.parse(data));
 } catch (ignore) {
 	console.log(fileName + 'から復元できませんでした\n');
-	console.log(fileName + 'を削除してテストを実行します')
-
 }
 
 /**
