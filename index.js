@@ -10,7 +10,9 @@ try {
 	const data = fs.readFileSync(fileName, 'utf8');
 	tasks = new Map(JSON.parse(data));
 } catch (ignore) {
-	console.log(fileName + 'から復元できませんでした');
+	console.log(fileName + 'から復元できませんでした\n');
+	console.log(fileName + 'を削除してテストを実行します')
+
 }
 
 /**
