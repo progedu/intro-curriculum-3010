@@ -1,6 +1,12 @@
 'use strict';
-const todo = require('./index.js');
 const assert = require('assert');
+
+
+fs.unlink('./tasks.json', err =>{
+  const fs = requrie('fs');
+  //テスト処理
+  const todo = require('./index.js');
+})
 
 // todo と list のテスト
 todo.todo('ノートを買う');
