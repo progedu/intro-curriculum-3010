@@ -1,23 +1,23 @@
-'use strict';
+'use strict'
 // key: タスクの文字列 value: 完了しているかどうかの真偽値
-let tasks = new Map();
+let tasks = new Map()
 
-const fs = require('fs');
-const fileName = './tasks.json';
+const fs = require('fs')
+const fileName = './tasks.json'
 
 // 同期的にファイルから復元
 try {
-	const data = fs.readFileSync(fileName, 'utf8');
-	tasks = new Map(JSON.parse(data));
+  const data = fs.readFileSync(fileName, 'utf8')
+  tasks = new Map(JSON.parse(data))
 } catch (ignore) {
-	console.log(fileName + 'から復元できませんでした');
+  console.log(fileName + 'から復元できませんでした')
 }
 
 /**
  * タスクをファイルに保存する
  */
 function saveTasks() {
-	fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8');
+  fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8')
 }
 
 /**
@@ -25,8 +25,8 @@ function saveTasks() {
  * @param {string} task
  */
 function todo(task) {
-	tasks.set(task, false);
-	saveTasks();
+  tasks.set(task, false)
+  saveTasks()
 }
 
 /**
@@ -35,7 +35,7 @@ function todo(task) {
  * @return {boolean} 完了したかどうか
  */
 function isDone(taskAndIsDonePair) {
-	return taskAndIsDonePair[1];
+  return taskAndIsDonePair[1]
 }
 
 /**
@@ -44,7 +44,7 @@ function isDone(taskAndIsDonePair) {
  * @return {boolean} 完了していないかどうか
  */
 function isNotDone(taskAndIsDonePair) {
-	return !isDone(taskAndIsDonePair);
+  return !isDone(taskAndIsDonePair)
 }
 
 /**
@@ -52,9 +52,9 @@ function isNotDone(taskAndIsDonePair) {
  * @return {array}
  */
 function list() {
-	return Array.from(tasks)
-		.filter(isNotDone)
-		.map(t => t[0]);
+  return Array.from(tasks)
+    .filter(isNotDone)
+    .map(t => t[0])
 }
 
 /**
@@ -62,10 +62,10 @@ function list() {
  * @param {string} task
  */
 function done(task) {
-	if (tasks.has(task)) {
-		tasks.set(task, true);
-		saveTasks();
-	}
+  if (tasks.has(task)) {
+    tasks.set(task, true)
+    saveTasks()
+  }
 }
 
 /**
@@ -73,9 +73,9 @@ function done(task) {
  * @return {array}
  */
 function donelist() {
-	return Array.from(tasks)
-		.filter(isDone)
-		.map(t => t[0]);
+  return Array.from(tasks)
+    .filter(isDone)
+    .map(t => t[0])
 }
 
 /**
@@ -83,14 +83,14 @@ function donelist() {
  * @param {string} task
  */
 function del(task) {
-	tasks.delete(task);
-	saveTasks();
+  tasks.delete(task)
+  saveTasks()
 }
 
 module.exports = {
-	todo: todo,
-	list: list,
-	done: done,
-	donelist: donelist,
-	del: del
-};
+  todo: todo,
+  list: list,
+  done: done,
+  donelist: donelist,
+  del: del
+}
