@@ -3,10 +3,10 @@
 let tasks = new Map();
 
 const fs = require('fs');
-const fileName = './tasks.json';
 fs.unlink("./tasks.json", err=>{
 	// テスト処理
 })
+const fileName = './tasks.json';
 
 // 同期的にファイルから復元
 try {
