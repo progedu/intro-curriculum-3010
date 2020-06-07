@@ -86,7 +86,6 @@ function del(task) {
 	tasks.delete(task);
 	saveTasks();
 }
-
 module.exports = {
 	todo: todo,
 	list: list,
