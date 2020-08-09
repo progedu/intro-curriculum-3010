@@ -20,6 +20,10 @@ function saveTasks() {
 	fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8');
 }
 
+function resetTasksForTest(){
+	tasks = new Map();
+}
+
 /**
  * TODOを追加する
  * @param {string} task
@@ -92,5 +96,6 @@ module.exports = {
 	list: list,
 	done: done,
 	donelist: donelist,
-	del: del
+	del: del,
+	resetTasksForTest: resetTasksForTest
 };
