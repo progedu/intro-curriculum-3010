@@ -3,7 +3,7 @@
 let tasks = new Map();
 
 const fs = require('fs');
-const fileName = './tasks.json';
+let fileName = './tasks.json';
 
 // 同期的にファイルから復元
 try {
@@ -18,6 +18,11 @@ try {
  */
 function saveTasks() {
 	fs.writeFileSync(fileName, JSON.stringify(Array.from(tasks)), 'utf8');
+}
+
+function resetTasksForTest() {
+	tasks = new Map();
+	fileName = './testTasks.json';
 }
 
 /**
@@ -92,5 +97,6 @@ module.exports = {
 	list: list,
 	done: done,
 	donelist: donelist,
-	del: del
+	del: del,
+	resetTasksForTest: resetTasksForTest
 };

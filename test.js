@@ -2,6 +2,8 @@
 const todo = require('./index.js');
 const assert = require('assert');
 
+todo.resetTasksForTest();
+
 // todo と list のテスト
 todo.todo('ノートを買う');
 todo.todo('鉛筆を買う');
