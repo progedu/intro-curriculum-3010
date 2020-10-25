@@ -24,7 +24,7 @@ function saveTasks() {
  * TODOを追加する
  * @param {string} task
  */
-function add(task) {
+function todo(task) {
 	tasks.set(task, false);
 	saveTasks();
 }
@@ -88,7 +88,7 @@ function del(task) {
 }
 
 module.exports = {
-	add,
+	todo,
 	list,
 	done,
 	donelist,
