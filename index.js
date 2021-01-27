@@ -4,7 +4,6 @@ let tasks = new Map();
 
 const fs = require('fs');
 const fileName = './tasks.json';
-
 // 同期的にファイルから復元
 try {
 	const data = fs.readFileSync(fileName, 'utf8');
