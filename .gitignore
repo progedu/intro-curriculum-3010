@@ -1,3 +1,7 @@
 tasks.json
 
 *.log
+
+node_modules
+
+yarn.lock
