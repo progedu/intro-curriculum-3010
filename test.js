@@ -1,4 +1,8 @@
 'use strict';
+
+const fs = require('fs');
+fs.unlink('./tasks.json', err => {
+  // テスト処理
 const todo = require('./index.js');
 const assert = require('assert');
 
@@ -19,3 +23,4 @@ assert.deepEqual(todo.list(), []);
 assert.deepEqual(todo.donelist(), []);
 
 console.log('テストが正常に完了しました');
+});
