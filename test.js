@@ -1,7 +1,10 @@
 'use strict';
 const todo = require('./index.js');
 const assert = require('assert');
-
+//json消した後にテスト(unlinkで順序制御)
+const fs = require('fs');
+fs.unlink('./tasks.json', err => {
+  // テスト処理
 // add と list のテスト
 todo.add('ノートを買う');
 todo.add('鉛筆を買う');
@@ -19,3 +22,6 @@ assert.deepStrictEqual(todo.list(), []);
 assert.deepStrictEqual(todo.donelist(), []);
 
 console.log('テストが正常に完了しました');
+
+});
+
